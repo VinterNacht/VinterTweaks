@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinterTweaks", "VinterTweaks.csproj", "{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{11D0DAC0-DBA2-4EA9-8B75-C024CC27A753}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3} = {CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2B2346-2C71-41A5-B8F2-454D7D36E4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D0DAC0-DBA2-4EA9-8B75-C024CC27A753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D0DAC0-DBA2-4EA9-8B75-C024CC27A753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D0DAC0-DBA2-4EA9-8B75-C024CC27A753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D0DAC0-DBA2-4EA9-8B75-C024CC27A753}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC24AF3E-B80F-427B-A07A-CC1DA78E5B1B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+{
+  "type": "code",
+  "modid": "vintertweaks",
+  "name": "Vinter Tweaks",
+  "description" : "This makes firewood into sticks",
+  "authors": ["Vinter_Nacht"],
+  "version": "1.15.5-2.0.0",
+  "dependencies": { 
+	"game": "",
+	"survival": ""
+  },
+  "website": "http://example.com"
+}
