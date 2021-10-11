@@ -231,16 +231,17 @@ namespace VinterTweaks.Items.Tools
 
             Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
 
-            if (interactedBlock.FirstCodePart() == "log" && interactedBlock.Variant["type"] == "placed")
+            if ((interactedBlock.FirstCodePart() == "log" && interactedBlock.Variant["type"] == "placed")
+                || interactedBlock.FirstCodePart() == "strippedlog"
+                || (interactedBlock.FirstCodePart() == "logsection" && interactedBlock.Variant["type"] == "placed"))
             {
 
                 //-- Stripping time modifier increases the speed at which the wood is stripped. By default, it's based on tool tier --//
                 //choppingTime = api.World.Config.GetDouble("BaseBarkStrippingSpeed", 1.0) * this.Attributes["strippingTimeModifier"].AsDouble();
-
                 byEntity.StartAnimation("axechop");
-
                 handling = EnumHandHandling.Handled;
             }
+
         }
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
@@ -249,7 +250,10 @@ namespace VinterTweaks.Items.Tools
                 if (secondsUsed >= choppingTime)
                 {
                     Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
-                    if (secondsUsed >= choppingTime && interactedBlock.FirstCodePart() == "log" && interactedBlock.Variant["type"] == "placed")
+                    if (secondsUsed >= choppingTime && 
+                        ((interactedBlock.FirstCodePart() == "log" && interactedBlock.Variant["type"] == "placed") 
+                        || interactedBlock.FirstCodePart() == "strippedlog")
+                        || (interactedBlock.FirstCodePart() == "logsection" && interactedBlock.Variant["type"] == "placed"))
                         SpawnLoot(blockSel, byEntity);
                     return false;
                 }

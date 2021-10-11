@@ -1,0 +1,14 @@
+﻿1.15.6-v2.1.0
+- Added In-World Axe Interactions
+	- Removed firewood grid recipes
+	- Added Shift+Right-Click interaction with axe
+	- Added compatibility with stripped logs and regular logs
+	- Only works with placed logs
+- Added In-World Saw Interactions
+	- Removed plank grid recipes (Logs, Stripped Logs, LogSection, Planks, PlankStairs, PlankSlabs)
+	- Added Shift-Right Click Interaction with saw
+	- Added compatibility with Stripped Logs and Regular Logs
+	- Works only with Placed Logs
+
+Upcoming Changes
+- ??

@@ -1,4 +1,5 @@
 ﻿using Vintagestory.API.Common;
+using Vintagestory.GameContent;
 using VinterTweaks.Items.Tools;
 
 namespace VinterTweaks
@@ -13,6 +14,8 @@ namespace VinterTweaks
         {
             base.Start(api);
             api.RegisterItemClass("itemvtaxe", typeof(ItemVTAxe));
+            api.RegisterItemClass("itemvtsaw", typeof(ItemVTSaw));
+            BlockEntityFirewoodPile
         }
     }
 }

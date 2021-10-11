@@ -10,5 +10,11 @@
     "path": "/class",
     "value": "itemvtaxe",
     "file": "itemtypes/tool/axe-stone.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "itemvtsaw",
+    "file": "itemtypes/tool/saw.json"
   }
 ]
