@@ -10,5 +10,52 @@
 	- Added compatibility with Stripped Logs and Regular Logs
 	- Works only with Placed Logs
 
+1.15.7.v2.2.0
+- Corrected crash caused by removal of recipe when accessing handbook for boards/firewood
+- Four blocks are now registered (Large Cauldron, Small Cauldron, Saucepan, Mixing Bowl) that have no function or recipe.
+
+1.15.7-V2.2.1
+- Removed line from reciperemoval that removed attribtues from Firewood. (Why did this even exist? O.o)
+
+1.15.7-v2.2.2-dev.1
+- Updated firewood chopping to scatter logs instead of dropping as a single stack.
+- Updated board sawing to scatter logs instead of dropping as a single stack.
+
+1.15.7-v.2.2.2-dev.2
+- Removed debug screen information.
+- Removed server ability to post coordinates when teleporting/logging in. (Thanks Gox)
+- Removed ability for land assignments to report coordinates (Thanks Gox)
+
+1.15.7-v2.2.2-dev.3
+- Changed spawning rules for deer, reduced their drops, added new valid spawn blocks, removed tall grass.
+- Removed knife from crab, reduced hp, reduced food drop, altered spawning mechanics (now quite rare)
+- Altered snake spawn rates, meat drop, etc.
+- Added tweaks for trade-o-mat to include our coins.
+
+1.15.7-v2.2.2-dev.4
+- Added changes to sheep and pig spawn rates.
+- Raised bark drop
+- Increased grind time for mortar & pestle
+- Increased strip time for adze
+- Increased soak time for tannin recipes to 240 hours.
+- Increased soak time for rawhide borax recipes to 192 hours
+- Increased soak time for rawhide limewater recipes to 240
+- Changed recipe for tannin from oak log to 12 oak bark per 10 liters
+- Reduced bark basket slot size to 4
+- Removed AncientTools curing rack
+- Removed AncientTools salted meat
+- Removed AncientTools curing hooks
+
+1.15.7-v2.2.2-dev.5
+- Added sound effects for sawing and chopping activities
+- Added catch to prevent null error when sawing/chopping and moving crosshairs off block
+
 Upcoming Changes
-- ??
+1.*.*-v*.*.*
+	- Add animation to sawing
+	- Make logpile functional
+	- Update firewood stacksize to 64 from 32 (?)
+	- Add chopping block
+
+At some point chopping/sawing will be migrated to 'In Dappled Groves'
+

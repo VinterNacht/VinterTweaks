@@ -1,0 +1,98 @@
+[
+  {
+    "file": "recipes/barrel/weaktannin.json",
+    "op": "replace",
+    "path": "/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/weaktannin.json",
+    "op": "remove",
+    "path": "/ingredients/0",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/weaktannin.json",
+    "op": "add",
+    "path": "/ingredients/-",
+    "value": { type: "item", code: "ancienttools:bark-oak",  quantity: 12 },
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/strongtannin.json",
+    "op": "replace",
+    "path": "/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/strongtannin.json",
+    "op": "remove",
+    "path": "/ingredients/0",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/strongtannin.json",
+    "op": "add",
+    "path": "/ingredients/-",
+    "value": { type: "item", code: "ancienttools:bark-oak",  quantity: 12},
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-lime.json",
+    "op": "replace",
+    "path": "/0/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-lime.json",
+    "op": "replace",
+    "path": "/1/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-lime.json",
+    "op": "replace",
+    "path": "/2/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-lime.json",
+    "op": "replace",
+    "path": "/3/sealHours",
+    "value": 240,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-borax.json",
+    "op": "replace",
+    "path": "/0/sealHours",
+    "value": 192,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-borax.json",
+    "op": "replace",
+    "path": "/1/sealHours",
+    "value": 192,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-borax.json",
+    "op": "replace",
+    "path": "/2/sealHours",
+    "value": 192,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/barrel/soakedhide-borax.json",
+    "op": "replace",
+    "path": "/3/sealHours",
+    "value": 192,
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  }
+]

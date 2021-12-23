@@ -15,7 +15,7 @@ namespace VinterTweaks.Items.Tools
         WorldInteraction[] interactions = null;
         private double sawingTime;
         private SimpleParticleProperties woodParticles;
-
+        private float playNextSound;
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -32,7 +32,7 @@ namespace VinterTweaks.Items.Tools
                         },
                     };
             });
-            sawingTime = 2.0;
+            sawingTime = 4.0;
             woodParticles = InitializeWoodParticles();
         }
 
@@ -54,8 +54,8 @@ namespace VinterTweaks.Items.Tools
         {
             base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
 
-            //-- Do not process the stripping action if the player is not sneaking, or no block is selected --//
-            if (!byEntity.Controls.Sneak || blockSel == null)
+            //-- Do not process the chopping action if the player is not sneaking, or no block is selected --//
+            if (!byEntity.Controls.Sprint || blockSel == null)
                 return;
 
             Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
@@ -75,11 +75,22 @@ namespace VinterTweaks.Items.Tools
                 //byEntity.StartAnimation("axechop");
                 handling = EnumHandHandling.Handled;
             }
+            playNextSound = 0f;
         }
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
+           
+
+
             if (blockSel != null)
             {
+                BlockPos pos = blockSel.Position;
+                if (((int)api.Side) == 2 && playNextSound < secondsUsed && blockSel != null)
+                {
+                    api.World.PlaySoundAt(new AssetLocation("vintertweaks:sounds/block/saw1"), pos.X, pos.Y, pos.Z, null, false, 32, 1f);
+                    playNextSound += 2f;
+                }
+
                 if (secondsUsed >= sawingTime)
                 {
                     Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
@@ -93,10 +104,11 @@ namespace VinterTweaks.Items.Tools
                         SpawnLoot(blockSel, byEntity);
                     return false;
                 }
-
+            } else
+            {
+                return false;
             }
             return true;
-
         }
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
@@ -104,7 +116,7 @@ namespace VinterTweaks.Items.Tools
             byEntity.StopAnimation("axechop");
             base.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel);
         }
-        //-- Spawn bark pieces when the player meets/exceeds the time it takes to strip the log. Also changes the interacted block to a stripped log variant --//
+        //-- Spawn firewood when the player meets/exceeds the time it takes to chop the log. Also removes the chopped log --//
         private void SpawnLoot(BlockSelection blockSel, EntityAgent byEntity)
         {
             if (api.Side == EnumAppSide.Server)
@@ -118,29 +130,33 @@ namespace VinterTweaks.Items.Tools
                         || interactedBlock.FirstCodePart() == "strippedlog"
                         || (interactedBlock.FirstCodePart() == "logsection" && interactedBlock.Variant["type"] == "placed"))
                 {
-                    api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("plank-" + interactedBlock.Variant["wood"])), 12), blockSel.Position.ToVec3d() +
-                            new Vec3d(0.5, 0.5, 0.5));
+                    spawnScatter(interactedBlock, 12, blockSel.Position);
                 }
                 else if (interactedBlock.FirstCodePart() == "planks")
                 {
-                    api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("plank-"+interactedBlock.Variant["wood"])),4), blockSel.Position.ToVec3d() +
-                            new Vec3d(0.5, 0.5, 0.5));
+                    spawnScatter(interactedBlock, 4, blockSel.Position); 
                 }
                 else if (interactedBlock.FirstCodePart() == "plankstairs")
                 {
-                    api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("plank-" + interactedBlock.Variant["wood"])), 3), blockSel.Position.ToVec3d() +
-                            new Vec3d(0.5, 0.5, 0.5));
+                    spawnScatter(interactedBlock, 3, blockSel.Position);
                 }
                 else if (interactedBlock.FirstCodePart() == "plankslab")
                 {
-                    api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("plank-" + interactedBlock.Variant["wood"])), 2), blockSel.Position.ToVec3d() +
-                            new Vec3d(0.5, 0.5, 0.5));
+                    spawnScatter(interactedBlock, 2, blockSel.Position);
                 }
                     if (byEntity is EntityPlayer player)
                     this.DamageItem(api.World, byEntity, player.RightHandItemSlot, 1);
             }
 
+        }
 
+        private void spawnScatter(Block interactedBlock, int size, BlockPos pos)
+        {
+            for (int i = size; i > 0; i--)
+            {
+                api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("plank-" + interactedBlock.Variant["wood"]))), pos.ToVec3d() +
+                    new Vec3d(0, .25, 0));
+            }
         }
 
         //Particle Handlers

@@ -1,0 +1,102 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/3/quantity/avg",
+    "value": "2",
+    "file": "fauna:entities/land/deer-whitetail-fawn.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/3/quantity/var",
+    "value": "1",
+    "file": "fauna:entities/land/deer-whitetail-fawn.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/0/quantity/avg",
+    "value": "6",
+    "file": "fauna:entities/land/deer-whitetail-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/0/quantity/var",
+    "value": "2",
+    "file": "fauna:entities/land/deer-whitetail-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/0/quantity/avg",
+    "value": "6",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/drops/0/quantity/var",
+    "value": "2",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/spawnconditions",
+    "file": "fauna:entities/land/deer-whitetail-female.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/spawnconditions",
+    "file": "fauna:entities/land/deer-whitetail-fawn.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/runtime/maxQuantity",
+    "value": "1",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/worldgen/minforestorshrub",
+    "value": ".5",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/runtime/minforestorshrub",
+    "value": ".5",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/runtime/insideBlockCodes/-",
+    "value": "fern-deerfern",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/spawnconditions/worldgen/insideBlockCodes/2",
+    "value": "fern-deerfern",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/spawnconditions/runtime/insideBlockCodes/2",
+    "value": "fern-deerfern",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/worldgen/insideBlockCodes/-",
+    "value": "fern-deerfern",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/runtime/insideBlockCodes/-",
+    "value": "flower-lilyofthevalley-free",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditions/worldgen/insideBlockCodes/-",
+    "value": "flower-lilyofthevalley-free",
+    "file": "fauna:entities/land/deer-whitetail-male.json"
+  }
+]

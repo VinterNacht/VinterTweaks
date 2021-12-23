@@ -1,4 +1,32 @@
 [
+   {
+    "file": "recipes/grid/block/curingrack.json",
+    "op": "add",
+    "path": "/enabled",
+    "value": "false",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/grid/clayforming/adzemold.json",
+    "op": "add",
+    "path": "/enabled",
+    "value": "false",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/grid/food/saltedmeat.json",
+    "op": "add",
+    "path": "/enabled",
+    "value": "false",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
+  {
+    "file": "recipes/grid/too/curinghook.json",
+    "op": "add",
+    "path": "/0/enabled",
+    "value": "false",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  },
   {
     "file": "recipes/grid/block/strippedlog.json",
     "op": "add",

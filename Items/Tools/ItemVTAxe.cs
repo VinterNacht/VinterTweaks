@@ -16,6 +16,7 @@ namespace VinterTweaks.Items.Tools
         WorldInteraction[] interactions = null;
         private double choppingTime;
         private SimpleParticleProperties woodParticles;
+        private float playNextSound;
 
 
         public override void OnLoaded(ICoreAPI api)
@@ -225,8 +226,8 @@ namespace VinterTweaks.Items.Tools
         {
             base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
 
-            //-- Do not process the stripping action if the player is not sneaking, or no block is selected --//
-            if (!byEntity.Controls.Sneak || blockSel == null)
+            //-- Do not process the chopping action if the player is not sneaking, or no block is selected --//
+            if (!byEntity.Controls.Sprint || blockSel == null)
                 return;
 
             Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
@@ -236,17 +237,28 @@ namespace VinterTweaks.Items.Tools
                 || (interactedBlock.FirstCodePart() == "logsection" && interactedBlock.Variant["type"] == "placed"))
             {
 
-                //-- Stripping time modifier increases the speed at which the wood is stripped. By default, it's based on tool tier --//
+                //-- Chopping time modifier increases the speed at which the wood is stripped. By default, it's based on tool tier --//
                 //choppingTime = api.World.Config.GetDouble("BaseBarkStrippingSpeed", 1.0) * this.Attributes["strippingTimeModifier"].AsDouble();
                 byEntity.StartAnimation("axechop");
+                //byEntity.StartAnimation(byEntity.RightHandItemSlot?.Itemstack?.Collectible.GeldHeldFpHitAnimation(slot, byEntity).ToString());
                 handling = EnumHandHandling.Handled;
             }
-
+            playNextSound = 0.25f;
         }
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
+
+            BlockPos pos = blockSel.Position;
+
             if (blockSel != null)
             {
+
+                if (((int)api.Side) == 2 && playNextSound < secondsUsed)
+                {
+                    api.World.PlaySoundAt(new AssetLocation("sounds/block/chop2"), pos.X, pos.Y, pos.Z, null, true, 32, 1f);
+                    playNextSound += .27f;
+                } 
+                
                 if (secondsUsed >= choppingTime)
                 {
                     Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
@@ -254,18 +266,20 @@ namespace VinterTweaks.Items.Tools
                         ((interactedBlock.FirstCodePart() == "log" && interactedBlock.Variant["type"] == "placed") 
                         || interactedBlock.FirstCodePart() == "strippedlog")
                         || (interactedBlock.FirstCodePart() == "logsection" && interactedBlock.Variant["type"] == "placed"))
-                        SpawnLoot(blockSel, byEntity);
+                        byEntity.StopAnimation("axechop");
+                    SpawnLoot(blockSel, byEntity);
                     return false;
                 }
-
+                
             }
             return true;
-
+            
         }
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
-            byEntity.StopAnimation("axechop");
+            byEntity.StopAnimation("axechop"); 
+            //byEntity.StopAnimation(byEntity.RightHandItemSlot?.Itemstack?.Collectible.GeldHeldFpHitAnimation(slot, byEntity).ToString());
             base.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel);
         }
         //-- Spawn bark pieces when the player meets/exceeds the time it takes to strip the log. Also changes the interacted block to a stripped log variant --//
@@ -274,17 +288,20 @@ namespace VinterTweaks.Items.Tools
             if (api.Side == EnumAppSide.Server)
             {
                 Block interactedBlock = api.World.BlockAccessor.GetBlock(blockSel.Position);
+                int firewoodYield = 4;
+
 
                 api.World.BlockAccessor.SetBlock(0, blockSel.Position);
                 api.World.BlockAccessor.MarkBlockDirty(blockSel.Position);
-
-                api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("firewood")), 4), blockSel.Position.ToVec3d() +
-                        new Vec3d(0.5, 0.5, 0.5));
+                for (int i = firewoodYield; i > 0; i--)
+                {
+                    api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("firewood"))), blockSel.Position.ToVec3d() +
+                        new Vec3d(0, .25, 0));
+                }
 
                 if (byEntity is EntityPlayer player)
                     this.DamageItem(api.World, byEntity, player.RightHandItemSlot, 1);
             }
-
 
         }
 

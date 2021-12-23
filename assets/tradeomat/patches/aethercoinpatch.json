@@ -1,0 +1,20 @@
+[
+  {
+    "op": "replace",
+    "path": "/shape/base",
+    "value": "vintertweaks:item/aethercoin",
+    "file": "tradeomat:itemtypes/basecoin.json"
+  },
+  {
+    "op": "replace",
+    "path": "/shape/base",
+    "value": "vintertweaks:item/aethercoin",
+    "file": "tradeomat:itemtypes/basecoin-small-v.json"
+  },
+  {
+    "op": "replace",
+    "path": "/shape/base",
+    "value": "vintertweaks:item/aethercoin",
+    "file": "tradeomat:itemtypes/basecoin-v.json"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "op": "replace",
+    "file": "chaoslands:entities/water/starfish.json",
+    "path": "/server/spawnconditions/worldgen/TriesPerChunk/avg",
+    "value": "0.0003"
+  },
+  {
+    "op": "replace",
+    "file": "chaoslands:entities/water/starfish.json",
+    "path": "/server/spawnconditions/runtime/chance/",
+    "value": "100"
+  },
+  {
+    "op": "replace",
+    "file": "chaoslands:entities/water/snail.json",
+    "path": "/server/spawnconditions/worldgen/TriesPerChunk/avg",
+    "value": "0.0003"
+  },
+  {
+    "op": "replace",
+    "file": "chaoslands:entities/water/snail.json",
+    "path": "/server/spawnconditions/runtime/chance/",
+    "value": "100"
+  }
+]

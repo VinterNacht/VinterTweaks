@@ -1,0 +1,9 @@
+[
+  {
+    "file": "blocktypes/barkbasket",
+    "op": "replace",
+    "path": "/attributes/quantitySlots/basket",
+    "value": "4",
+    "dependsOn": [ { "modid": "ancienttools" } ]
+  }
+]

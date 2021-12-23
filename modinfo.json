@@ -2,9 +2,9 @@
   "type": "code",
   "modid": "vintertweaks",
   "name": "Vinter Tweaks",
-  "description" : "This makes firewood into sticks",
+  "description" : "A collection of different minor VS tweaks, and proof of concept pieces",
   "authors": ["Vinter_Nacht"],
-  "version": "1.15.6-2.1.0",
+  "version": "2.2.2-dev.5",
   "dependencies": { 
 	"game": "",
 	"survival": ""

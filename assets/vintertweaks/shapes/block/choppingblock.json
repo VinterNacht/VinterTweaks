@@ -1,0 +1,29 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"wood": "game:/block/wood/treetrunk/maple",
+		"bark": "game:/block/wood/bark/maple"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 1.0, 0.0, 1.0 ], 
+			"to": [ 15.0, 3.0, 15.0 ], 
+			"rotationOrigin": [ 1.0, 0.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#bark", "uv": [ 0.0, 0.0, 14.0, 3.0 ] },
+				"east": { "texture": "#bark", "uv": [ 0.0, 0.0, 14.0, 3.0 ] },
+				"south": { "texture": "#bark", "uv": [ 0.0, 0.0, 14.0, 3.0 ] },
+				"west": { "texture": "#bark", "uv": [ 0.0, 0.0, 14.0, 3.0 ] },
+				"up": { "texture": "#wood", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+				"down": { "texture": "#wood", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+			}
+		}
+	]}

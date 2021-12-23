@@ -1,0 +1,50 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/worldgen/groupsize/",
+    "value": { dist: "verynarrowgaussian", avg: 1, var: 3 },
+    "file": "survival/entities/land/sheep-bighorn-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/runtime/groupsize/",
+    "value": { dist: "verynarrowgaussian", avg: 1, var: 3 },
+    "file": "survival/entities/land/sheep-bighorn-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/worldgen/maxQuantity/",
+    "value": "1",
+    "file": "survival/entities/land/sheep-bighorn-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/runtime/maxQuantity/",
+    "value": "1",
+    "file": "survival/entities/land/sheep-bighorn-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/worldgen/groupsize/",
+    "value": { dist: "verynarrowgaussian", avg: 1, var: 3 },
+    "file": "survival/entities/land/pig-wild-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/runtime/groupsize/",
+    "value": { dist: "verynarrowgaussian", avg: 1, var: 3 },
+    "file": "survival/entities/land/pig-wild-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/worldgen/maxQuantity/",
+    "value": "2",
+    "file": "survival/entities/land/pig-wild-male.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/spawnconditions/runtime/maxQuantity/",
+    "value": "2",
+    "file": "survival/entities/land/pig-wild-male.json"
+  }
+]

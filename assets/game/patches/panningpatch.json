@@ -1,0 +1,42 @@
+[
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/@(sand|gravel)-.*/19/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/@(sand|gravel)-.*/16/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/@(sand|gravel)-.*/15/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/bonysoil/22/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/bonysoil/21/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/bonysoil/19/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/bonysoil/17/",
+    "file": "survival/blocktypes/wood/pan.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributes/panningdrops/bonysoil/6/",
+    "file": "survival/blocktypes/wood/pan.json"
+  }
+]

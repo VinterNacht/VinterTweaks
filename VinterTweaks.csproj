@@ -6,17 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="assets\vintertweaks\blocktypes\**" />
     <Compile Remove="Launcher\**" />
+    <EmbeddedResource Remove="assets\vintertweaks\blocktypes\**" />
     <EmbeddedResource Remove="Launcher\**" />
+    <None Remove="assets\vintertweaks\blocktypes\**" />
     <None Remove="Launcher\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="assets\blockentities\BEAetherCoinPile.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
+    <None Remove="assets\tradeomat\patches\aethercoin.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\AppData\Roaming\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
@@ -37,10 +49,6 @@
       <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="VSModLauncher">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSModLauncher.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
     <Reference Include="VSSurvivalMod">
       <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
@@ -48,28 +56,109 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Items\Tools\ItemVTAxe.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Items\Tools\ItemVTSaw.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="VinterTweaks.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="assets\ancienttools\patches\barkbaskets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\ancienttools\patches\removerecipes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\blocktypes\largecauldron.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\betterlogs\recipes\grid\betterlogfirewood.json">
+    <None Update="assets\blocktypes\mixingbowl.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\betterlogs\recipes\grid\betterlogfirewood2.json">
+    <None Update="assets\blocktypes\saucepanredux.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\blocktypes\smallcauldron.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\chaoslands\patches\sealifepatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\fauna\patches\whitetaildeerpatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\game\patches\animaltweak.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\game\patches\hideprocessing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\game\patches\panningpatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="assets\game\patches\reciperemove.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="assets\game\patches\tooltweak.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="assets\game\patches\toolsaw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\game\patches\tooltweaks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="assets\game\patches\waterportion.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="assets\lang\en.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="assets\tradeomat\patches\aethercoinpatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\aethercoinpile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\choppingblock.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\honeypot.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\largecauldron-lidded.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\largecauldron.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\logpile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\mixingbowl.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\saucepan-lidded.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\saucepan.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\saucepanredux.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\smallcauldron-lidded.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\block\smallcauldron.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\vintertweaks\recipes\grid\firewoodsticks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\vintertweaks\shapes\item\aethercoin.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="changelog.txt">
@@ -78,6 +167,11 @@
     <None Update="modinfo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\blockentities\" />
+    <Folder Include="assets\vintertweaks\shapes\entities\" />
   </ItemGroup>
 
 </Project>
