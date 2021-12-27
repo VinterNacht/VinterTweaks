@@ -4,10 +4,10 @@
   "name": "Vinter Tweaks",
   "description" : "A collection of different minor VS tweaks, and proof of concept pieces",
   "authors": ["Vinter_Nacht"],
-  "version": "2.2.2-dev.5",
+  "version": "2.2.2-dev.6",
   "dependencies": { 
 	"game": "",
 	"survival": ""
   },
-  "website": "http://example.com"
+  "website": "http://aetheriallabs.org"
 }

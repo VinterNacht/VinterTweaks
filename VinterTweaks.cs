@@ -4,8 +4,6 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 using VinterTweaks.blockentities;
 using VinterTweaks.Blocks.Coins;
-//using Vintertweaks.blockentities
-using VinterTweaks.Items.Tools;
 
 namespace VinterTweaks
 {
@@ -45,8 +43,6 @@ namespace VinterTweaks
         public override void Start (ICoreAPI api)
         {
             base.Start(api);
-            api.RegisterItemClass("itemvtaxe", typeof(ItemVTAxe));
-            api.RegisterItemClass("itemvtsaw", typeof(ItemVTSaw));
             api.RegisterBlockClass("aethercoinspile", typeof(AetherCoinsPile));
             api.RegisterBlockEntityClass("beaethercoinpile", typeof(BEAetherCoinsPile));
             PatchGame();
@@ -82,7 +78,6 @@ namespace VinterTweaks
 }
 
 [HarmonyPatch]
-//internal sealed class BlockEntityFarmlandPatches
 class BlockEntityHUDPatches
 {
 

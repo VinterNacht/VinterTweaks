@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="assets\blockentities\BEAetherCoinPile.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
     <None Remove="assets\tradeomat\patches\aethercoin.json" />
@@ -27,50 +23,37 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\AppData\Roaming\Vintagestory\Lib\0Harmony.dll</HintPath>
-      <Private>false</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="VintagestoryAPI">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\VintagestoryAPI.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\VintagestoryAPI.dll</HintPath>
     </Reference>
     <Reference Include="VintagestoryLib">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\VintagestoryLib.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\VintagestoryLib.dll</HintPath>
+    </Reference>
+    <Reference Include="VSBuildLib">
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\VSBuildLib.dll</HintPath>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\Mods\VSCreativeMod.dll</HintPath>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSEssentials.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\Mods\VSEssentials.dll</HintPath>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\AppData\Roaming\VintageStory1160\Mods\VSSurvivalMod.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Items\Tools\ItemVTAxe.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Items\Tools\ItemVTSaw.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
     <Compile Update="VinterTweaks.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="assets\ancienttools\patches\barkbaskets.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="assets\ancienttools\patches\removerecipes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -101,15 +84,6 @@
     <None Update="assets\game\patches\panningpatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\game\patches\reciperemove.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\game\patches\toolsaw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\game\patches\tooltweaks.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="assets\game\patches\waterportion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -134,9 +108,6 @@
     <None Update="assets\vintertweaks\shapes\block\largecauldron.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\vintertweaks\shapes\block\logpile.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="assets\vintertweaks\shapes\block\mixingbowl.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -155,9 +126,6 @@
     <None Update="assets\vintertweaks\shapes\block\smallcauldron.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\vintertweaks\recipes\grid\firewoodsticks.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="assets\vintertweaks\shapes\item\aethercoin.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -167,11 +135,6 @@
     <None Update="modinfo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="assets\blockentities\" />
-    <Folder Include="assets\vintertweaks\shapes\entities\" />
   </ItemGroup>
 
 </Project>

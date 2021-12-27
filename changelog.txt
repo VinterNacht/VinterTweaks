@@ -50,12 +50,9 @@
 - Added sound effects for sawing and chopping activities
 - Added catch to prevent null error when sawing/chopping and moving crosshairs off block
 
+1.15.10-v2.2.2-dev.6
+- All wood and bark related content shifted to In Dappled Groves
+
 Upcoming Changes
 1.*.*-v*.*.*
-	- Add animation to sawing
-	- Make logpile functional
-	- Update firewood stacksize to 64 from 32 (?)
-	- Add chopping block
-
-At some point chopping/sawing will be migrated to 'In Dappled Groves'
 
