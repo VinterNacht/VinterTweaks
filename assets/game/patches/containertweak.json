@@ -1,0 +1,38 @@
+[
+  {
+    "file": "blocktypes/wood/chest/",
+    "op": "add",
+    "path": "maxStackSize",
+    "value": 1
+  },
+  {
+    "file": "blocktypes/wood/chest-labeled/",
+    "op": "add",
+    "path": "maxStackSize",
+    "value": 1
+  },
+  {
+    "file": "blocktypes/wood/chest-trunk/",
+    "op": "add",
+    "path": "maxStackSize",
+    "value": 1
+  },
+  {
+    "file": "blocktypes/wood/crate-legacy/",
+    "op": "add",
+    "path": "maxStackSize",
+    "value": 1
+  },
+  {
+    "file": "blocktypes/clay/storagevessel/",
+    "op": "replace",
+    "path": "maxStackSize",
+    "value": 1
+  },
+  {
+    "file": "blocktypes/stationarybasket/",
+    "op": "add",
+    "path": "maxStackSize",
+    "value": 2
+  }
+]

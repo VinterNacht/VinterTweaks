@@ -95,6 +95,9 @@
     <None Update="assets\game\patches\animaltweak.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="assets\game\patches\containertweak.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\game\patches\hideprocessing.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
